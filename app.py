@@ -3,6 +3,7 @@ from bottle import request, template
 from bottle import static_file, get
 from bottle import error
 import os
+from model import insert_user
 
 '''
 @route('/')
@@ -52,6 +53,16 @@ def fonts(filename):
 def login():
     return template('login')
 
+@route('/cadastro')
+def cadastro():
+    return template('cadastro')
+
+@route('/cadastro', method='POST')
+def acao_cadastro():
+    username = request.forms.get('username')
+    password = request.forms.get('password')
+    insert_user(username, password)
+    return template('verificacao_cadastro', nome=username)
 
 def check_login(username, password):
     d = {'marcos': 'python', 'joao': 'java', 'pedro': 'go'}
