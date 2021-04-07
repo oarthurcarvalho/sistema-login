@@ -1,7 +1,7 @@
 astroid==2.4.1
 autopep8==1.5.2
 bcrypt==3.1.7
-bottle==0.12.18
+bottle==0.12.19
 bottle-session==0.9
 bottle-sqlalchemy==0.4.3
 cffi==1.14.0
